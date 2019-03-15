@@ -44,7 +44,7 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="RevitAddInUtility">
-      <HintPath>$(REVITAPI)\RevitAddInUtility.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\Revit 2018\RevitAddInUtility.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />

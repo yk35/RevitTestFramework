@@ -1255,7 +1255,7 @@ namespace RTF.Framework
 
         private void CreateJournal(string path, string testName, string fixtureName, string assemblyPath, string resultsPath, string modelPath)
         {
-            using (var tw = new StreamWriter(path, false))
+            using (var tw = new StreamWriter(path, false, Encoding.Default))
             {
                 var journal = String.Format(@"'" +
                                             "Dim Jrn \n" +
@@ -1277,7 +1277,7 @@ namespace RTF.Framework
         {
             if (journalInitialized) return;
 
-            using (var tw = new StreamWriter(path, false))
+            using (var tw = new StreamWriter(path, false, Encoding.Default))
             {
                 var journal = String.Format(@"'" +
                                              "Dim Jrn \n" +
@@ -1295,7 +1295,7 @@ namespace RTF.Framework
 
         private void AddToJournal(string path, string testName, string fixtureName, string assemblyPath, string resultsPath, string modelPath)
         {
-            using (var tw = new StreamWriter(path, true))
+            using (var tw = new StreamWriter(path, true, Encoding.Default))
             {
                 var journal = String.Format("Jrn.Command \"StartupPage\" , \"Open this project , ID_FILE_MRU_FIRST\" \n" +
                                             "Jrn.Data \"MRUFileName\"  , \"{0}\" \n" +
@@ -1315,7 +1315,7 @@ namespace RTF.Framework
         {
             if (journalFinished) return;
 
-            using (var tw = new StreamWriter(path, true))
+            using (var tw = new StreamWriter(path, true, Encoding.Default))
             {
                 var journal = String.Format("Jrn.RibbonEvent \"Execute external command:{0}:{1}\" \n" +
                                             "Jrn.Command \"SystemMenu\" , \"Quit the application; prompts to save projects , ID_APP_EXIT\"",
